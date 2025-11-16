@@ -1,18 +1,20 @@
+# atualiza.py
 import sqlite3
+from db import DB_NAME
 
-# 1 - Conectando no BF
-conexao = sqlite3.connect('biblioteca de jogos .db')
-cursor = conexao.cursor()
-
-# 2 - Atualiza dados
-id = 1
-cursor.execute(
-    """
-        UPDATE series SET nome = ?
-        WHERE id = ?
-    """,
-    ("gow of war", id)
-)
-
-conexao.commit()
-print("Dados atualizados!")
+def atualizar_dados_jogo(id_jogo, nome, ano, nota):
+    """Atualiza as informações de um jogo existente."""
+    try:
+        with sqlite3.connect(DB_NAME) as conexao:
+            cursor = conexao.cursor()
+            cursor.execute(
+                """
+                UPDATE jogos
+                SET nome = ?, ano = ?, nota = ?
+                WHERE id = ?
+                """,
+                (nome, ano, nota, id_jogo)
+            )
+            return True, "Jogo atualizado com sucesso!"
+    except sqlite3.Error as e:
+        return False, f"Erro ao atualizar o jogo: {e}"
