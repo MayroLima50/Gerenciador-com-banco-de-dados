@@ -1,14 +1,14 @@
 import sqlite3
 
 #1 - Conectando no BD
-conexao = sqlite3.connect('netflix.db')
+conexao = sqlite3.connect('biblioteca de jogos .db')
 cursor = conexao.cursor()
 
 #2 - Inserindo dados
 cursor.execute(
     """
-        INSERT INTO  series(nome, ano, nota)
-        VALUES ('Breaking Bad', 2008, 9.5);
+        INSERT INTO  jogos(nome, ano, nota)
+        VALUES ('FIFA', 2025, 9.5);
     """
 )
 conexao.commit()

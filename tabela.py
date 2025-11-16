@@ -1,7 +1,7 @@
 import sqlite3
 
 # 1 - Conectando no BD
-conexao = sqlite3.connect('netflix.db')
+conexao = sqlite3.connect('biblioteca de jogos .db')
 
 # 2 - Criando o cusror
 cursor = conexao.cursor()
@@ -9,7 +9,7 @@ cursor = conexao.cursor()
 # 3 - Criando a tabela filmes
 cursor.execute(
     """
-        CREATE TABLE IF NOT EXISTS series(
+        CREATE TABLE IF NOT EXISTS jogos(
             id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
             nome TEXT NOT NULL,
             ano INTEGER NOT NULL,
