@@ -1,4 +1,3 @@
-# excluir.py
 import sqlite3
 from db import DB_NAME
 

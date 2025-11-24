@@ -5,13 +5,12 @@ from tabela import criar_tabela_jogos
 from dados import adicionar_novo_jogo
 from leitura import ler_todos_os_jogos
 from excluir import excluir_jogo_por_id
+from atualiza import atualizar_dados_jogo
 
-# ---  INICIALIZAÇÃO DO BD ---
 st.set_page_config(layout="centered", page_title="Gerenciador de Jogos")
-st.title("🎮 Gerenciador de Biblioteca de Jogos")
-st.caption("Projeto por: Mayron Lima, Lucas Gabriel, Yago Daniel")
+st.title(" Gerenciador de Biblioteca de Jogos")
 
-# Função de inicialização para garantir que a tabela exista
+
 def inicializar_banco():
     conexao = conectar_bd()
     if conexao:
@@ -21,7 +20,7 @@ def inicializar_banco():
 
 inicializar_banco()
 
-with st.expander("➕ Adicionar Novo Jogo", expanded=True):
+with st.expander(" Adicionar Novo Jogo", expanded=True):
     with st.form("form_adicionar", clear_on_submit=True):
         novo_nome = st.text_input("Nome do Jogo")
         novo_ano = st.number_input("Ano de Lançamento", min_value=1970, max_value=2030, step=1, value=2024)

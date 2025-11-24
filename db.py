@@ -1,4 +1,3 @@
-
 import sqlite3
 
 DB_NAME = 'biblioteca_de_jogos.db'
